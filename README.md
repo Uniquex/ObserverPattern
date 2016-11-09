@@ -1,2 +1,2 @@
 # ObserverPattern
-ObserverPattern for POS1
+ObserverPattern coded in Java
