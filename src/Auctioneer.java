@@ -5,16 +5,15 @@ import java.util.ArrayList;
  */
 public class Auctioneer implements Subject{
 
-    private ArrayList<Observer> observers= new ArrayList<>();
+    private ArrayList<Bidder> observers= new ArrayList<>();
     private double price;
 
-    public void registerObserver(Observer o){
-        observers.add(o);
+    public void registerObserver(Bidder o){observers.add(o);
     }
 
     public void unregisterObserver(Observer o){
 
-        int x = observers.indexOf(o);
+        int x = observers.indexOf(o)+1;
 
         System.out.println("Observer #"+x+" was removed.");
 
@@ -22,8 +21,24 @@ public class Auctioneer implements Subject{
     }
 
     public void notifyObserver(){
+        int x = 0;
         for (Observer obs : observers) {
+            x++;
             obs.update(price);
+            System.out.println("Observer #"+x+" notified!");
+        }
+    }
+
+    public void updatePrice(int price){
+        this.price = price;
+        this.notifyObserver();
+    }
+
+    public void printObserverdetails(){
+        int x=0;
+        for(Observer obs : observers){
+            x++;
+            System.out.println("Observer #"+x+" Status: "+obs.toString());
         }
     }
 }

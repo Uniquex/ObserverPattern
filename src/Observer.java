@@ -6,4 +6,5 @@
 public interface Observer {
 
     void update(double Price);
+    String toString();
 }

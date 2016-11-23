@@ -10,7 +10,8 @@ public class Bidder implements Observer {
         this.price = price;
     }
 
-    public void printPrice(){
-        System.out.println("Current bid is at: "+price+"€");
+    public String toString()
+    {
+        return price+"";
     }
 }
