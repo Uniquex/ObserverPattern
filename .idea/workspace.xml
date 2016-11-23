@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a05a546-f1d4-43f6-bfbd-a909db282170" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentation/Observer Pattern.odp" afterPath="$PROJECT_DIR$/Presentation/Observer Pattern.odp" />
-    </list>
+    <list default="true" id="5a05a546-f1d4-43f6-bfbd-a909db282170" name="Default" comment="" />
     <ignored path="Observer Pattern.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
