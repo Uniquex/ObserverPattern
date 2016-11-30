@@ -4,10 +4,11 @@
 //Auktionär
 
 public interface Subject {
-    void registerObserver(Bidder o);
+
+    void registerObserver(Observer o);
     void unregisterObserver(Observer o);
     void notifyObserver();
-    void updatePrice(int Price);
+    void updatePrice(double Price);
     void printObserverdetails();
 
 }

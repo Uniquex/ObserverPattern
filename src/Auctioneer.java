@@ -2,15 +2,26 @@ import java.util.ArrayList;
 
 /**
  * Created by vitz on 09.11.16.
+ *
+ * class for the auctioneer of the Auction
  */
 public class Auctioneer implements Subject{
 
-    private ArrayList<Bidder> observers= new ArrayList<>();
+    private ArrayList<Observer> observers= new ArrayList<>();
     private double price;
 
-    public void registerObserver(Bidder o){observers.add(o);
+    /**
+     * Add Observer to the ArrayList
+     * @param o Observer to add
+     */
+    public void registerObserver(Observer o){
+        observers.add(o);
     }
 
+    /**
+     * Removal of specified Observer
+     * @param o Observer to remove
+     */
     public void unregisterObserver(Observer o){
 
         int x = observers.indexOf(o)+1;
@@ -20,6 +31,9 @@ public class Auctioneer implements Subject{
         observers.remove(x);
     }
 
+    /**
+     * Notify Observer Objects that are specified in the ArrayList
+     */
     public void notifyObserver(){
         int x = 0;
         for (Observer obs : observers) {
@@ -29,11 +43,19 @@ public class Auctioneer implements Subject{
         }
     }
 
-    public void updatePrice(int price){
+    /**
+     * Update the current price of the auctioned item
+     * @param price defined price to update
+     */
+    public void updatePrice(double price){
         this.price = price;
         this.notifyObserver();
     }
 
+    /**
+     * Print observer status (their current price)
+     * mothod used to check the price their are currently holding
+     */
     public void printObserverdetails(){
         int x=0;
         for(Observer obs : observers){
