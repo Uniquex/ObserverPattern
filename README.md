@@ -1,2 +1,2 @@
 # ObserverPattern
-ObserverPattern coded in Java
+ObserverPattern implemented in Java
