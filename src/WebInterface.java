@@ -43,6 +43,14 @@ public class WebInterface implements Observer{
         this.ip = ip;
     }
 
+    /**
+     * Returns current value of the Webinterface
+     * @return
+     */
+    @Override
+    public double getPrice(){
+        return this.price;
+    }
 }
 
 

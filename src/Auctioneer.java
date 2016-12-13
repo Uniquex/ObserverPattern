@@ -63,4 +63,13 @@ public class Auctioneer implements Subject{
             System.out.println("Observer #"+x+" Status: "+obs.toString());
         }
     }
+
+
+    /**
+     * Returns Arraylist holding all Observers
+     * @return
+     */
+    public ArrayList<Observer> getObserverList(){
+        return this.observers;
+    }
 }

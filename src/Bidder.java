@@ -8,7 +8,7 @@
 public class Bidder implements Observer {
 
     private double price;
-    String name;
+    private String name;
 
     /**
      * Constructor of the bidder class
@@ -41,5 +41,14 @@ public class Bidder implements Observer {
      */
     public void setName(String name){
         this.name = name;
+    }
+
+    /**
+     * Returns current value of Bidder
+     * @return
+     */
+    @Override
+    public double getPrice(){
+        return this.price;
     }
 }
