@@ -22,7 +22,12 @@ public class WebInterface implements Observer{
      * invoked by Subject
      * @param price the value price has to be replaced
      */
+    @Override
     public void update(double price) {
+
+        //TODO implementierung DB anbindung
+
+
         this.price = price;
     }
 
@@ -30,6 +35,7 @@ public class WebInterface implements Observer{
      * Returns current knowledge of the price the observer class is holding
      * @return string with price
      */
+    @Override
     public String toString()
     {
         return "Observer: "+this.ip+" - "+this.price;
@@ -43,6 +49,14 @@ public class WebInterface implements Observer{
         this.ip = ip;
     }
 
+    /**
+     * Returns current value of the Webinterface
+     * @return
+     */
+    @Override
+    public double getPrice(){
+        return this.price;
+    }
 }
 
 

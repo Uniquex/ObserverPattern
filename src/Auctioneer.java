@@ -14,6 +14,7 @@ public class Auctioneer implements Subject{
      * Add Observer to the ArrayList
      * @param o Observer to add
      */
+    @Override
     public void registerObserver(Observer o){
         observers.add(o);
     }
@@ -22,6 +23,7 @@ public class Auctioneer implements Subject{
      * Removal of specified Observer
      * @param o Observer to remove
      */
+    @Override
     public void unregisterObserver(Observer o){
 
         int x = observers.indexOf(o)+1;
@@ -34,6 +36,7 @@ public class Auctioneer implements Subject{
     /**
      * Notify Observer Objects that are specified in the ArrayList
      */
+    @Override
     public void notifyObserver(){
         int x = 0;
         for (Observer obs : observers) {
@@ -47,6 +50,7 @@ public class Auctioneer implements Subject{
      * Update the current price of the auctioned item
      * @param price defined price to update
      */
+    @Override
     public void updatePrice(double price){
         this.price = price;
         this.notifyObserver();
@@ -56,11 +60,21 @@ public class Auctioneer implements Subject{
      * Print observer status (their current price)
      * mothod used to check the price their are currently holding
      */
+    @Override
     public void printObserverdetails(){
         int x=0;
         for(Observer obs : observers){
             x++;
             System.out.println("Observer #"+x+" Status: "+obs.toString());
         }
+    }
+
+
+    /**
+     * Returns Arraylist holding all Observers
+     * @return
+     */
+    public ArrayList<Observer> getObserverList(){
+        return this.observers;
     }
 }

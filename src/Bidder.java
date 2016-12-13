@@ -8,7 +8,7 @@
 public class Bidder implements Observer {
 
     private double price;
-    String name;
+    private String name;
 
     /**
      * Constructor of the bidder class
@@ -22,6 +22,7 @@ public class Bidder implements Observer {
      * invoked by Subject
      * @param price the value price has to be replaced
      */
+    @Override
     public void update(double price) {
         this.price = price;
     }
@@ -30,6 +31,7 @@ public class Bidder implements Observer {
      * Returns current knowledge of the price the observer class is holding
      * @return string with price
      */
+    @Override
     public String toString()
     {
         return "Observer: "+name+" - "+price;
@@ -41,5 +43,14 @@ public class Bidder implements Observer {
      */
     public void setName(String name){
         this.name = name;
+    }
+
+    /**
+     * Returns current value of Bidder
+     * @return
+     */
+    @Override
+    public double getPrice(){
+        return this.price;
     }
 }
