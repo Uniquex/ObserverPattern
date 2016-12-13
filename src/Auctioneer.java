@@ -25,12 +25,15 @@ public class Auctioneer implements Subject{
      */
     @Override
     public void unregisterObserver(Observer o){
+        //System.out.println("Observer #" + observers.indexOf(o) + " was removed.");
 
-        int x = observers.indexOf(o)+1;
-
-        System.out.println("Observer #"+x+" was removed.");
-
-        observers.remove(x);
+        if(observers.contains(o)) {
+            observers.remove(o);
+        }
+        else
+        {
+            System.out.println("Object not in the observerlist");
+        }
     }
 
     /**
@@ -42,7 +45,7 @@ public class Auctioneer implements Subject{
         for (Observer obs : observers) {
             x++;
             obs.update(price);
-            System.out.println("Observer #"+x+" notified!");
+            //System.out.println("Observer #"+x+" notified!");
         }
     }
 
